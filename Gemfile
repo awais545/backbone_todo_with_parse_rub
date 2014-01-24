@@ -17,6 +17,7 @@ end
 group :development, :test do
   gem 'sqlite3', '1.3.8'    # test database
   gem 'figaro', '0.7.0'     # env variables
+  gem 'pry-rails'
 end
 
 # production gems for heroku
@@ -27,6 +28,10 @@ end
 
 # Paging
 gem 'kaminari', '0.15.0'
+
+# backbone-on-rails
+gem 'backbone-on-rails'
+gem "parse-ruby-client"
 
 # Slugs and friendly id's
 gem 'friendly_id', '5.0.2'
