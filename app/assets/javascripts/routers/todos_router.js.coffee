@@ -5,7 +5,7 @@ class BackboneWithRails.Routers.Todos extends Backbone.Router
 
 	initialize: ->
 		@collection = new BackboneWithRails.Collections.Todos()
-		console.log(@collection.fetch())
+		@collection.fetch reset: true
 
 	index: ->
 		index_view = new BackboneWithRails.Views.TodosIndex(collection: @collection)
