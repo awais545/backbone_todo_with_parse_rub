@@ -7,16 +7,6 @@
 		<input id="toggle-all" type="checkbox">
 		<label for="toggle-all">Mark all as complete</label>
 		<ul id="todo-list">
-			<% for todo in @todos.models: %>
-				<li> 
-					<div class="view">
-						<input class="toggle" type="checkbox">
-						<label> <%= todo.get('task') %> </label>
-						<button class="destroy" id= <%= todo.get('objectId')%> ></button>
-					</div>
-					<input class="edit" value="testing"> 
-				</li>
-			<% end %>
 		</ul>
 	</section>
 </section>

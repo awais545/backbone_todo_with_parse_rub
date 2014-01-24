@@ -30,9 +30,8 @@ class TodosController < ApplicationController
 	end
 
 	def destroy
-		binding.pry
-		todo_query = Parse::Query.new("Todo").eq("objectId", params[:parse_object_id]).get.first
-		todo_query.parse_delete
+		todo_query = Parse::Query.new("Todo").eq("objectId", params[:id]).get.first
+		respond_with todo_query.parse_delete
 	end
 
 	private

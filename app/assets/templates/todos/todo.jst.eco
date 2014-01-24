@@ -1,1 +1,5 @@
-Todo goes here
+<div class="view">
+<input class="toggle" type="checkbox">
+<label> <%= @todo.get('task') %> </label>
+<button class="destroy" id= <%= @todo.get('objectId')%> > </button>
+</div>
