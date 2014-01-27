@@ -3,7 +3,7 @@ class BackboneWithRails.Views.Todo extends Backbone.View
   tagName: 'li'
 
   events: ->
-  	'click .destroy': 'test123',
+  	'click .destroy': 'deleteTodo',
   	'dblclick label': 'editTodo'
 
   initialize: ->
@@ -14,7 +14,7 @@ class BackboneWithRails.Views.Todo extends Backbone.View
   	$(@el).html(@template(todo: @model))
   	this
 
-  test123: (e)->
+  deleteTodo: (e)->
   	e.preventDefault()
   	console.log(this.model.get('objectId'))
   	console.log(this.model)
