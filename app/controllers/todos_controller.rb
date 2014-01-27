@@ -23,13 +23,15 @@ class TodosController < ApplicationController
 	end
 
 	def update
-		todo_query    	  = Parse::Query.new("Todo").eq("objectId", params[:parse_object_id]).get.first
-		todo['task']      = params[:task]
-		todo['completed'] = params[:completed]
-		todo.save
+		binding.pry
+		# todo_query    	  = Parse::Query.new("Todo").eq("objectId", params[:parse_object_id]).get.first
+		# todo['task']      = params[:task]
+		# todo['completed'] = params[:completed]
+		# todo.save
 	end
 
 	def destroy
+		binding.pry
 		todo_query = Parse::Query.new("Todo").eq("objectId", params[:id]).get.first
 		respond_with todo_query.parse_delete
 	end

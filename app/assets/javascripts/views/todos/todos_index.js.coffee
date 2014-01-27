@@ -5,8 +5,10 @@ class BackboneWithRails.Views.TodosIndex extends Backbone.View
   	'keypress #new-todo': 'createTodo'
 
   initialize: ->
-  	@collection.on('reset', @render, this)
-  	@collection.on('add',   @render, this)
+    this.input = this.$('#new-todo')
+    @collection.on('reset', @render, this)
+  	# @collection.on('add',   @render, this)
+    # @collection.on('reset', @render, this)
 
   render: ->
   	$(@el).html(@template())
@@ -20,8 +22,3 @@ class BackboneWithRails.Views.TodosIndex extends Backbone.View
   createTodo: (e)->
   	if e.which is 13
   		@collection.create task: $('#new-todo').val(), completed: false
-
-  editTodo: ->
-    this.$el.addClass('editing')
-    # this.$input.focus()
-    console.log(this)
